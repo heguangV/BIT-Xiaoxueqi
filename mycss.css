@@ -1,0 +1,22 @@
+body{font-family: 楷体;
+    font-size: large;
+    background:url(images/background.jpg);
+    background-size: cover;
+    margin:50 auto;
+    width:90%;
+    text-align: center;
+}
+h1{font-family: 楷体;
+    text-align: center;
+    font-size: xx-large; 
+    font-weight: 4000;
+    border-bottom:2px black dashed;
+}
+h2{font-family: 楷体;
+    text-align: center;
+    font-size: x-large; 
+    font-weight: 100;
+}
+#bread{background:#eee8d2; font-family: 楷体; font-size: small;text-align: left}
+a{text-decoration: none; color:black}
+a:hover{text-decoration: underline; color:red;}
