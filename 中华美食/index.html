@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中华美食网</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/homepage.css">
+</head>
+<body>
+    <header class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">中华美食</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="html/cuisines.html">八大菜系</a></li>
+                    <li><a href="mailto:1120242531@bit.edu.com">联系我们</a></li>
+                </ul>
+            </nav>
+
+        </div>
+        <div class="breadcrumb">
+            <a href="index.html">首页</a>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>探索中华美食的博大精深</h2>
+                <p>从北方的面食到南方的海鲜，从川菜的麻辣到粤菜的清淡，体验中国八大菜系的独特魅力</p>
+                <a href="html/cuisines.html" class="cta-button">探索八大菜系</a>
+            </div>
+        </section>
+
+        <section class="featured-cuisines">
+            <h2>今日推荐菜系</h2>
+            <div class="cuisine-cards" id="randomCuisines">
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // 所有菜系数据
+                const cuisines = [
+                    {
+                        name: "鲁菜",
+                        description: "山东菜系，以咸鲜为主，讲究火候，注重原汁原味",
+                        image: "images/lu.jpg",
+                        link: "html/lu-cuisine.html"
+                    },
+                    {
+                        name: "川菜",
+                        description: "麻辣鲜香，百菜百味，中国最受欢迎的菜系之一",
+                        image: "images/chuan.jpg",
+                        link: "html/chuan-cuisine.html"
+                    },
+                    {
+                        name: "粤菜",
+                        description: "清淡鲜美，原汁原味，以点心、烧腊闻名",
+                        image: "images/yue.jpg",
+                        link: "html/yue-cuisine.html"
+                    },
+                    {
+                        name: "苏菜",
+                        description: "甜鲜适口，刀工精细，注重原汁原味",
+                        image: "images/su.jpg",
+                        link: "html/su-cuisine.html"
+                    },
+                    {
+                        name: "闽菜",
+                        description: "酸甜鲜醇，讲究汤的制作，以海鲜见长",
+                        image: "images/min.jpg",
+                        link: "html/min-cuisine.html"
+                    },
+                    {
+                        name: "浙菜",
+                        description: "鲜嫩爽滑，香醇绵糯，清淡不腻",
+                        image: "images/zhe.jpg",
+                        link: "html/zhe-cuisine.html"
+                    },
+                    {
+                        name: "湘菜",
+                        description: "香辣鲜香，油重色浓，注重酸辣鲜香",
+                        image: "images/xiang.jpg",
+                        link: "html/xiang-cuisine.html"
+                    },
+                    {
+                        name: "徽菜",
+                        description: "咸鲜厚醇，讲究火功，擅长烧、炖、蒸",
+                        image: "images/hui.jpg",
+                        link: "html/hui-cuisine.html"
+                    }
+                ];
+                // 随机选择3个不重复的菜系
+                function getRandomCuisines(count) {
+                    const shuffled = [...cuisines].sort(() => 0.5 - Math.random());
+                    return shuffled.slice(0, count);
+                }
+                // 渲染随机菜系
+                function renderRandomCuisines() {
+                    const container = document.getElementById('randomCuisines');
+                    const randomCuisines = getRandomCuisines(3);
+
+                    container.innerHTML = randomCuisines.map(cuisine => `
+                        <div class="cuisine-card">
+                            <img src="${cuisine.image}" alt="${cuisine.name}">
+                            <div class="cuisine-card-content">
+                                <h3>${cuisine.name}</h3>
+                                <p>${cuisine.description}</p>
+                                <a href="${cuisine.link}" class="learn-more">了解更多</a>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+                renderRandomCuisines();
+            });
+        </script>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p class="copyright">© 2025 中华美食网 版权所有</p>
+        </div>
+    </footer>
+</body>
+</html>

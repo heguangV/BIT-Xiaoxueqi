@@ -1,0 +1,194 @@
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 5rem 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #c0392b;
+}
+
+.flavor-recommendation {
+    margin: 3rem 0;
+    padding: 0 1rem;
+}
+
+.flavor-recommendation h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.flavor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flavor-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.flavor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.flavor-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.flavor-content {
+    padding: 1.2rem;
+}
+
+.flavor-content h3 {
+    margin: 0 0 0.5rem;
+    color: #222;
+    font-size: 1.3rem;
+}
+
+.flavor-content p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.cuisine-popup {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.flavor-card:hover .cuisine-popup {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+
+.cuisine-popup h4 {
+    margin: 0 0 0.8rem;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.cuisine-popup ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cuisine-popup li {
+    margin-bottom: 0.5rem;
+}
+
+.cuisine-popup a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.cuisine-popup a:hover {
+    color: #c0392b;
+    text-decoration: underline;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .flavor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .flavor-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .flavor-card:hover .cuisine-popup {
+        display: none;
+    }
+
+    .flavor-card.active .cuisine-popup {
+        display: block;
+    }
+}
+
+.newsletter {
+    background: var(--light-color);
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.newsletter h2 {
+    margin-bottom: 1.5rem;
+}
+
+.newsletter form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter input {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.newsletter button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0 1.5rem;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
